@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Completa de Mantenimiento para Calentadores Solares</title>
+  <meta name="description" content="Aprende a mantener tu calentador solar en óptimas condiciones. Ahorra hasta $15,000 MXN al año con estos tips de mantenimiento preventivo." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="nav-logo-icon">☀️</span>
+        Guía Solar
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#monthly">Mensual</a></li>
+        <li><a href="#quarterly">Trimestral</a></li>
+        <li><a href="#annual">Anual</a></li>
+        <li><a href="#troubleshooting">Problemas</a></li>
+        <li><a href="#tips">Tips Pro</a></li>
+        <li><a href="#calculator">Calculadora</a></li>
+        <li><a href="#plan">Plan</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">📖 Guía Práctica 2025</span>
+          <h1 class="hero-title">
+            Mantenimiento de <span class="highlight">Calentadores Solares</span>
+          </h1>
+          <p class="hero-description">
+            Aprende a cuidar tu calentador solar con esta guía paso a paso. Con solo 
+            <strong>15-30 minutos al mes</strong>, puedes ahorrar miles de pesos y 
+            extender la vida útil de tu equipo hasta 10 años.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card animate-on-scroll stagger-1">
+              <span class="stat-value">$15K</span>
+              <span class="stat-label">Ahorro anual en gas</span>
+            </div>
+            <div class="stat-card animate-on-scroll stagger-2">
+              <span class="stat-value">+10</span>
+              <span class="stat-label">Años de vida extra</span>
+            </div>
+            <div class="stat-card animate-on-scroll stagger-3">
+              <span class="stat-value">15 min</span>
+              <span class="stat-label">Al mes de cuidado</span>
+            </div>
+          </div>
+          <a href="#monthly" class="hero-cta">
+            Comenzar la Guía ↓
+          </a>
+        </div>
+        <div class="hero-image animate-on-scroll from-right">
+          <img src="images/hero_solar.png" alt="Calentador solar en azotea con luz dorada" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANTENIMIENTO MENSUAL ===== -->
+  <section class="section section-dark" id="monthly">
+    <div class="container">
+      <span class="section-label animate-on-scroll">📋 Cada Mes</span>
+      <h2 class="section-title animate-on-scroll">Inspección Mensual <br/>(15 minutos)</h2>
+      <p class="section-subtitle animate-on-scroll">
+        Detecta problemas a tiempo con esta rutina rápida. Solo necesitas tus ojos y un trapo.
+      </p>
+      <div class="checklist-grid">
+        <div class="checklist-image animate-on-scroll from-left">
+          <img src="images/maintenance_tools.png" alt="Herramientas de mantenimiento solar" />
+        </div>
+        <div class="checklist-items animate-on-scroll from-right">
+          <h3 style="color: var(--amber-400); font-size: 1rem; margin-bottom: 8px; font-weight: 700;">✦ INSPECCIÓN VISUAL</h3>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Limpia hojas y escombros</strong>
+              <span>Retira cualquier obstáculo de los colectores y nidos de aves</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Observa los paneles</strong>
+              <span>Busca grietas, daños por granizo o decoloración</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Checa fugas</strong>
+              <span>Inspecciona bajo el sistema y en conexiones (manchas de agua, óxido)</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Revisa el termómetro</strong>
+              <span>Verifica que la temperatura sea 50-70°C en días soleados</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Escucha ruidos</strong>
+              <span>Sonidos extraños pueden indicar problemas en la bomba</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Verifica presión</strong>
+              <span>Si tienes manómetro, debe estar entre 1.5-3 bar</span>
+            </div>
+          </div>
+
+          <h3 style="color: var(--amber-400); font-size: 1rem; margin-bottom: 8px; margin-top: 16px; font-weight: 700;">🧹 LIMPIEZA BÁSICA</h3>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Retira suciedad suelta</strong>
+              <span>Usa un cepillo suave o trapo húmedo</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Limpia polvo</strong>
+              <span>Con agua y jabón neutro — nunca productos abrasivos</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Drena condensación</strong>
+              <span>Si notas acumulación de humedad en aislamientos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANTENIMIENTO TRIMESTRAL ===== -->
+  <section class="section section-warm" id="quarterly">
+    <div class="container">
+      <span class="section-label animate-on-scroll">🔧 Cada 3 Meses</span>
+      <h2 class="section-title animate-on-scroll">Mantenimiento Trimestral <br/>(30 minutos)</h2>
+      <p class="section-subtitle animate-on-scroll">
+        Limpieza profunda y revisión de conexiones. Mantén la eficiencia al máximo.
+      </p>
+      <div class="steps-grid">
+        <div class="steps-list animate-on-scroll from-left">
+          <h3 style="color: var(--amber-400); font-size: 1rem; margin-bottom: 4px; font-weight: 700;">🧽 Limpieza Profunda de Colectores</h3>
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Elige el momento</h4>
+              <p>Hazlo temprano en la mañana cuando los paneles estén fríos para evitar quemaduras y daño por choque térmico.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Prepara la mezcla</h4>
+              <p>Agua tibia + jabón neutro. <strong>NO uses limpiadores químicos fuertes</strong> que puedan dañar el vidrio.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Aplica con esponja suave</h4>
+              <p>Evita cepillos duros que puedan rayar el vidrio y reducir la captación de luz solar.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Enjuaga bien</h4>
+              <p>Usa manguera con boquilla suave para no dañar los componentes delicados.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Seca con franela</h4>
+              <p>Previene manchas de cal que reducen la transparencia del vidrio.</p>
+            </div>
+          </div>
+
+          <h3 style="color: var(--amber-400); font-size: 1rem; margin: 16px 0 4px; font-weight: 700;">🔩 Verificación de Conexiones</h3>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Revisa tuberías</strong>
+              <span>Busca señales de corrosión o desgaste</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Aprieta conexiones</strong>
+              <span>Sin exceso — podrías dañar roscas</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Verifica aislamiento térmico</strong>
+              <span>Las tuberías expuestas deben estar cubiertas</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Checa válvulas</strong>
+              <span>Deben abrir y cerrar sin problemas</span>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-circle">✓</div>
+            <div class="check-text">
+              <strong>Verifica boiler auxiliar</strong>
+              <span>Funcione correctamente con termostato a máx. 55°C</span>
+            </div>
+          </div>
+        </div>
+        <div class="steps-image animate-on-scroll from-right">
+          <img src="images/deep_cleaning.png" alt="Limpieza profunda de paneles solares" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANTENIMIENTO SEMESTRAL/ANUAL ===== -->
+  <section class="section section-dark" id="annual">
+    <div class="container">
+      <div class="checklist-grid">
+        <div>
+          <span class="section-label animate-on-scroll">📅 Semestral & Anual</span>
+          <h2 class="section-title animate-on-scroll">Servicio Profesional</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Revisiones más profundas que aseguran la longevidad de tu sistema.
+          </p>
+          <div class="timeline animate-on-scroll">
+            <div class="timeline-item">
+              <span class="timeline-period">⏱ Cada 6 Meses</span>
+              <h3 class="timeline-title">Revisión Semestral</h3>
+              <div class="timeline-checks">
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Válvula de seguridad:</strong> Prueba su funcionamiento (debe soltar agua al activarse)</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Bomba de circulación:</strong> Verifica que no haga ruidos anormales</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Controlador/Timer:</strong> Verifica programación y funcionamiento</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Estructura de soporte:</strong> Revisa tornillos, corrosión en bases metálicas</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Nivel del tanque:</strong> En sistemas con tanque separado, verifica que esté horizontal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-period">📆 1 Vez al Año</span>
+              <h3 class="timeline-title">Servicio Profesional Completo</h3>
+              <div class="timeline-checks">
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Descalcificación:</strong> Elimina sarro acumulado</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Circuito hidráulico:</strong> Revisión completa del sistema</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Prueba de presión:</strong> Asegura integridad del sistema</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Ánodos de magnesio:</strong> Verificación y reemplazo si aplica</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Empaques y sellos:</strong> Reemplazo de piezas desgastadas</span>
+                </div>
+                <div class="timeline-check">
+                  <span class="icon">✓</span>
+                  <span><strong>Eficiencia térmica:</strong> Medición y documentación</span>
+                </div>
+              </div>
+              <div class="timeline-cost">💰 Costo aproximado: $800 - $2,500 MXN según el tipo de sistema</div>
+            </div>
+          </div>
+        </div>
+        <div class="checklist-image animate-on-scroll from-right">
+          <img src="images/professional_service.png" alt="Servicio profesional de calentador solar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TROUBLESHOOTING ===== -->
+  <section class="section section-warm" id="troubleshooting">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-label animate-on-scroll">🛠 Solución de Problemas</span>
+        <h2 class="section-title animate-on-scroll" style="margin-left: auto; margin-right: auto;">Troubleshooting</h2>
+        <p class="section-subtitle animate-on-scroll" style="margin-left: auto; margin-right: auto;">
+          Los problemas más comunes y cómo solucionarlos rápidamente.
+        </p>
+      </div>
+
+      <div class="accordion-list animate-on-scroll">
+        <!-- Problem 1 -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header-left">
+              <div class="accordion-icon">🌡️</div>
+              <span class="accordion-title">Agua no alcanza la temperatura deseada</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <table class="problem-table">
+                <thead>
+                  <tr><th>Causa Posible</th><th>Solución</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Colectores sucios</td><td>Limpia los paneles inmediatamente</td></tr>
+                  <tr><td>Sombra sobre los paneles</td><td>Poda árboles cercanos, reorienta si es posible</td></tr>
+                  <tr><td>Fuga de calor en tuberías</td><td>Reemplaza aislamiento térmico deteriorado</td></tr>
+                  <tr><td>Válvula mezcladora mal ajustada</td><td>Ajusta la mezcla de agua fría/caliente</td></tr>
+                  <tr><td>Sarro en el sistema</td><td>Requiere descalcificación profesional</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header-left">
+              <div class="accordion-icon">💧</div>
+              <span class="accordion-title">Fugas de agua</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="alert-box">
+                <span class="alert-icon">⚠️</span>
+                <div>
+                  <strong>Acción inmediata:</strong><br>
+                  1. Cierra la válvula de alimentación de agua<br>
+                  2. Drena el sistema si la fuga es severa<br>
+                  3. Identifica el punto exacto de la fuga
+                </div>
+              </div>
+              <table class="problem-table" style="margin-top: 16px;">
+                <thead>
+                  <tr><th>Causa</th><th>Solución</th><th>Costo aprox.</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Empaques deteriorados</td><td>Reemplazar</td><td>$50-200 MXN</td></tr>
+                  <tr><td>Corrosión en tuberías</td><td>Reemplazo de sección</td><td>Variable</td></tr>
+                  <tr><td>Conexiones flojas</td><td>Apretar con llave adecuada</td><td>Gratis</td></tr>
+                  <tr><td>Grietas en colector</td><td>Reemplazo del panel</td><td>Variable</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header-left">
+              <div class="accordion-icon">🔊</div>
+              <span class="accordion-title">Ruidos extraños</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <table class="problem-table">
+                <thead>
+                  <tr><th>Tipo de Ruido</th><th>Causa Probable</th><th>Acción</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Golpeteo/Martilleo</td><td>Golpe de ariete en tuberías</td><td>Instala amortiguador o revisa presión</td></tr>
+                  <tr><td>Burbujeo constante</td><td>Aire atrapado en el sistema</td><td>Purga las líneas (válvula de aire)</td></tr>
+                  <tr><td>Zumbido eléctrico</td><td>Bomba o resistencia</td><td>Verifica conexiones eléctricas</td></tr>
+                  <tr><td>Goteo interno</td><td>Válvula de seguridad activada</td><td>Normal si hay sobrecalentamiento ocasional</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header-left">
+              <div class="accordion-icon">🔸</div>
+              <span class="accordion-title">Corrosión visible</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <table class="problem-table">
+                <thead>
+                  <tr><th>Zona</th><th>Señal</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Conexiones de cobre</td><td>Verdigris (color verde) indica corrosión electrolítica</td></tr>
+                  <tr><td>Tornillos y bases</td><td>Óxido puede comprometer estabilidad</td></tr>
+                  <tr><td>Tanque de almacenamiento</td><td>Corrosión interna (revisar ánodo de magnesio)</td></tr>
+                  <tr><td>Tuberías de acero</td><td>Manchas naranjas/marrones son señal de alerta</td></tr>
+                </tbody>
+              </table>
+              <div class="prevention-list" style="margin-top: 16px;">
+                <h4 style="font-size: 0.9rem; color: var(--green-500); margin-bottom: 8px;">Prevención:</h4>
+                <div class="prevention-item"><span class="icon">✓</span> Usa aislantes dieléctricos en uniones de metales distintos</div>
+                <div class="prevention-item"><span class="icon">✓</span> Mantén el ánodo de magnesio en buen estado</div>
+                <div class="prevention-item"><span class="icon">✓</span> Aplica pintura anticorrosiva en estructuras metálicas</div>
+                <div class="prevention-item"><span class="icon">✓</span> Controla la calidad del agua (pH y dureza)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header-left">
+              <div class="accordion-icon">⛈️</div>
+              <span class="accordion-title">Daños por clima</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <table class="problem-table">
+                <thead>
+                  <tr><th>Evento</th><th>Acciones Recomendadas</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>🌨 Granizo</td><td>Revisa inmediatamente • Busca micro fracturas en vidrio • Fotografía daños para seguro</td></tr>
+                  <tr><td>❄️ Heladas</td><td>Drena el sistema si hay riesgo de congelamiento • Verifica protección anticongelante</td></tr>
+                  <tr><td>💨 Viento fuerte</td><td>Verifica anclajes y tornillos • Revisa conexiones • Inspecciona micro movimientos</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Quality Alert -->
+      <div class="quality-alert animate-on-scroll">
+        <h4>⚠️ Calidad del Agua: El Factor Olvidado</h4>
+        <p style="font-size: 0.9rem; color: var(--slate-300);">
+          El agua dura es el <strong style="color: var(--amber-300);">enemigo #1</strong> de tu calentador. 
+          Si tu agua tiene alta concentración de minerales (calcio, magnesio), toma estas precauciones:
+        </p>
+        <div class="quality-columns">
+          <div class="quality-col">
+            <h5>✅ Qué hacer</h5>
+            <ul>
+              <li><span style="color: var(--green-500)">✓</span> Instalar un suavizador de agua</li>
+              <li><span style="color: var(--green-500)">✓</span> Descalcificaciones cada 6 meses</li>
+              <li><span style="color: var(--green-500)">✓</span> Usar filtros en la entrada del sistema</li>
+            </ul>
+          </div>
+          <div class="quality-col">
+            <h5>🔍 Señales de agua dura</h5>
+            <ul>
+              <li><span style="color: var(--amber-400)">→</span> Manchas blancas en regaderas</li>
+              <li><span style="color: var(--amber-400)">→</span> Residuo blanco en el tanque</li>
+              <li><span style="color: var(--amber-400)">→</span> Reducción gradual de temperatura</li>
+              <li><span style="color: var(--amber-400)">→</span> Tuberías "rugosas" por dentro</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIPS PRO ===== -->
+  <section class="section section-dark" id="tips">
+    <div class="container">
+      <div class="checklist-grid">
+        <div>
+          <span class="section-label animate-on-scroll">⚡ Optimización</span>
+          <h2 class="section-title animate-on-scroll">Tips Pro para <br/>Máxima Eficiencia</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Mejora el rendimiento de tu sistema con estas estrategias inteligentes.
+          </p>
+          <div class="tips-grid animate-on-scroll">
+            <div class="tip-card">
+              <div class="tip-number">1</div>
+              <h4>Horarios inteligentes</h4>
+              <ul>
+                <li>Usa agua caliente después de las 2 PM (máxima temperatura)</li>
+                <li>Evita duchas largas temprano en la mañana</li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">2</div>
+              <h4>Ajusta el termostato</h4>
+              <ul>
+                <li>Configúralo a 50-55°C (no más)</li>
+                <li>Programa para que solo se active en días nublados</li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">3</div>
+              <h4>Reduce pérdidas</h4>
+              <ul>
+                <li>Aísla TODAS las tuberías de agua caliente</li>
+                <li>Instala temporizador en boiler auxiliar</li>
+                <li>Usa regaderas ahorradoras</li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">4</div>
+              <h4>Optimiza el ángulo</h4>
+              <ul>
+                <li>México: 18-23° de inclinación es óptimo</li>
+                <li>Orientación: Siempre hacia el sur</li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">5</div>
+              <h4>Monitorea tu consumo</h4>
+              <ul>
+                <li>Lleva registro de recibos de gas/electricidad</li>
+                <li>Calcula tu ahorro mensual</li>
+                <li>Identifica cambios en eficiencia rápidamente</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="checklist-image animate-on-scroll from-right">
+          <img src="images/efficiency_tips.png" alt="Eficiencia energética solar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CALCULADORA ===== -->
+  <section class="section section-warm" id="calculator">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-label animate-on-scroll">🧮 Herramienta Interactiva</span>
+        <h2 class="section-title animate-on-scroll" style="margin-left: auto; margin-right: auto;">¿Reparar o Reemplazar?</h2>
+        <p class="section-subtitle animate-on-scroll" style="margin-left: auto; margin-right: auto;">
+          Usa esta calculadora para tomar la mejor decisión económica.
+        </p>
+      </div>
+      <div class="calculator-section">
+        <div class="calculator-box animate-on-scroll from-left">
+          <h3>Calculadora</h3>
+          <p class="subtitle">Ingresa los datos de tu calentador solar</p>
+          <div class="calc-field">
+            <label for="repairCost">Costo de la reparación</label>
+            <input type="number" id="repairCost" placeholder="Ej: 2500" />
+            <p class="unit">Monto en MXN</p>
+          </div>
+          <div class="calc-field">
+            <label for="equipAge">Edad del equipo</label>
+            <input type="number" id="equipAge" placeholder="Ej: 12" />
+            <p class="unit">Años de uso</p>
+          </div>
+          <div class="calc-field">
+            <label for="lifeExpect">Vida útil esperada</label>
+            <input type="number" id="lifeExpect" placeholder="Ej: 20" value="20" />
+            <p class="unit">Años (por defecto: 20)</p>
+          </div>
+          <button class="calc-button" onclick="calculate()">Calcular Resultado</button>
+          <div class="calc-result" id="calcResult">
+            <p class="calc-result-value" id="resultValue"></p>
+            <p class="calc-result-text" id="resultText"></p>
+            <p class="calc-result-detail" id="resultDetail"></p>
+          </div>
+        </div>
+        <div class="animate-on-scroll from-right">
+          <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: #fff;">⚠️ Señales de que Necesitas Reemplazo</h3>
+          <div class="signals-list">
+            <div class="signal-item">
+              <div class="signal-icon">⏰</div>
+              <div class="signal-text">
+                <strong>Edad avanzada</strong>
+                <span>Más de 15-20 años, incluso con buen mantenimiento</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">🔸</div>
+              <div class="signal-text">
+                <strong>Corrosión severa</strong>
+                <span>En estructura, colectores o tanque</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">🔧</div>
+              <div class="signal-text">
+                <strong>Reparaciones frecuentes</strong>
+                <span>Más de 2-3 reparaciones mayores al año</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">📉</div>
+              <div class="signal-text">
+                <strong>Eficiencia baja</strong>
+                <span>Reducción de más del 30% en temperatura</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">💧</div>
+              <div class="signal-text">
+                <strong>Fugas recurrentes</strong>
+                <span>Especialmente si son en el colector</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">🏚️</div>
+              <div class="signal-text">
+                <strong>Daño estructural</strong>
+                <span>Por granizo, viento o deterioro de soporte</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">💸</div>
+              <div class="signal-text">
+                <strong>Costo de reparación alto</strong>
+                <span>Superior al 50% del valor de uno nuevo</span>
+              </div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">🔌</div>
+              <div class="signal-text">
+                <strong>Obsolescencia tecnológica</strong>
+                <span>Piezas de reemplazo ya no disponibles</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card" style="margin-top: 24px; padding: 24px;">
+            <h4 style="font-size: 1rem; color: var(--amber-400); margin-bottom: 12px;">🆕 Innovaciones en Calentadores Solares</h4>
+            <p style="font-size: 0.85rem; color: var(--slate-400); margin-bottom: 12px;">Si estás considerando reemplazo, investiga las nuevas tecnologías:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px;">
+              <li style="font-size: 0.85rem; color: var(--slate-300); display: flex; align-items: center; gap: 8px;">
+                <span style="color: var(--amber-500);">→</span> <strong>Materiales poliméricos:</strong>&nbsp;Más ligeros, resistentes a corrosión
+              </li>
+              <li style="font-size: 0.85rem; color: var(--slate-300); display: flex; align-items: center; gap: 8px;">
+                <span style="color: var(--amber-500);">→</span> <strong>Diseños modulares:</strong>&nbsp;Fácil instalación y mantenimiento
+              </li>
+              <li style="font-size: 0.85rem; color: var(--slate-300); display: flex; align-items: center; gap: 8px;">
+                <span style="color: var(--amber-500);">→</span> <strong>Anti-vandalismo:</strong>&nbsp;Menor atractivo para robo de metales
+              </li>
+              <li style="font-size: 0.85rem; color: var(--slate-300); display: flex; align-items: center; gap: 8px;">
+                <span style="color: var(--amber-500);">→</span> <strong>Mayor durabilidad:</strong>&nbsp;Inmunes a sarro y corrosión electrolítica
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAN DE ACCIÓN ===== -->
+  <section class="section section-dark" id="plan">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-label animate-on-scroll">✅ Tu Plan</span>
+        <h2 class="section-title animate-on-scroll" style="margin-left: auto; margin-right: auto;">Plan de Mantenimiento</h2>
+        <p class="section-subtitle animate-on-scroll" style="margin-left: auto; margin-right: auto;">
+          Sigue este calendario y tu calentador solar te lo agradecerá.
+        </p>
+      </div>
+
+      <div class="plan-grid animate-on-scroll">
+        <div class="plan-card">
+          <div class="plan-frequency">Cada Mes</div>
+          <div class="plan-time">⏱ 15 min</div>
+          <ul class="plan-tasks">
+            <li><span class="icon">✓</span> Inspección visual básica</li>
+            <li><span class="icon">✓</span> Limpieza superficial</li>
+            <li><span class="icon">✓</span> Verificar temperatura</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-frequency">Cada 3 Meses</div>
+          <div class="plan-time">⏱ 30 min</div>
+          <ul class="plan-tasks">
+            <li><span class="icon">✓</span> Limpieza profunda de colectores</li>
+            <li><span class="icon">✓</span> Revisar conexiones y tuberías</li>
+            <li><span class="icon">✓</span> Verificar sistema de respaldo</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-frequency">Cada 6 Meses</div>
+          <div class="plan-time">⏱ 45 min</div>
+          <ul class="plan-tasks">
+            <li><span class="icon">✓</span> Probar válvulas de seguridad</li>
+            <li><span class="icon">✓</span> Revisar estructura y soportes</li>
+            <li><span class="icon">✓</span> Verificar bomba (si aplica)</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-frequency">1 Vez al Año</div>
+          <div class="plan-time">👷 Profesional</div>
+          <ul class="plan-tasks">
+            <li><span class="icon">✓</span> Servicio profesional completo</li>
+            <li><span class="icon">✓</span> Descalcificación del sistema</li>
+            <li><span class="icon">✓</span> Medición de eficiencia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #fff;">
+          Con solo <span style="color: var(--amber-400);">15-30 minutos al mes</span>, puedes:
+        </h3>
+      </div>
+
+      <div class="benefits-grid animate-on-scroll" style="margin-top: 30px;">
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-value">$15,000</div>
+          <div class="benefit-text">Ahorro anual en gas/electricidad</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⏰</div>
+          <div class="benefit-value">+5-10 años</div>
+          <div class="benefit-text">De vida útil adicional</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-value">Evita</div>
+          <div class="benefit-text">Reparaciones costosas de emergencia</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌊</div>
+          <div class="benefit-value">365 días</div>
+          <div class="benefit-text">Agua caliente confiable todo el año</div>
+        </div>
+      </div>
+
+      <div class="glass-card animate-on-scroll" style="max-width: 700px; margin: 50px auto 0; text-align: center; padding: 36px;">
+        <p style="font-size: 1.1rem; color: var(--amber-200); font-weight: 600; margin-bottom: 8px;">
+          El mantenimiento preventivo siempre es más barato que la reparación correctiva.
+        </p>
+        <p style="font-size: 0.88rem; color: var(--slate-400);">
+          Busca siempre técnicos certificados en calentadores solares. Una instalación o reparación mal hecha puede costarte más a largo plazo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span class="footer-logo-icon">☀️</span>
+        Guía Solar
+      </div>
+      <p>Guía informativa y educativa sobre mantenimiento de calentadores solares.</p>
+      <p>Consulta siempre el manual específico de tu fabricante.</p>
+      <p class="disclaimer">Para trabajos en altura y sistemas presurizados, contrata profesionales certificados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
