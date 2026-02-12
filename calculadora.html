@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Solar — Descubre cuánto puedes ahorrar</title>
+    <meta name="description"
+        content="Calcula en 2 minutos tu ahorro personalizado con energía solar. Descubre cuánto podrías ahorrar en gas cada año." />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="calc-nav">
+        <a href="index.html" class="nav-brand">
+            <span class="nav-icon">☀️</span>
+            <span>Ciqa Solar</span>
+        </a>
+        <a href="index.html" class="nav-back">← Guía de Mantenimiento</a>
+    </nav>
+
+    <!-- HERO / LANDING -->
+    <section class="landing" id="landing">
+        <div class="landing-content">
+            <div class="landing-text">
+                <span class="badge">⚡ Calculadora Gratuita</span>
+                <h1>Descubre cuánto podrías <span class="gradient-text">ahorrar</span> con energía solar</h1>
+                <p class="landing-sub">Calcula en <strong>2 minutos</strong> tu ahorro personalizado en pesos. Sin
+                    compromiso, sin costo.</p>
+                <div class="social-proof">
+                    <div class="proof-item">
+                        <span class="proof-value">$8,400</span>
+                        <span class="proof-label">Ahorro promedio/año</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-value">+2,000</span>
+                        <span class="proof-label">Cálculos realizados</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-value">2-3 años</span>
+                        <span class="proof-label">ROI promedio</span>
+                    </div>
+                </div>
+                <button class="cta-main" onclick="startCalculator()">
+                    Calcular Mi Ahorro Gratis →
+                </button>
+            </div>
+            <div class="landing-image">
+                <img src="images/dev_hero.png" alt="Calculadora Solar" />
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="calculator-section" id="calculator">
+        <!-- Progress Bar -->
+        <div class="calc-progress">
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-steps">
+                <span class="step-dot active" data-step="1">1</span>
+                <span class="step-dot" data-step="2">2</span>
+                <span class="step-dot" data-step="3">3</span>
+                <span class="step-dot" data-step="4">4</span>
+                <span class="step-dot" data-step="5">5</span>
+            </div>
+        </div>
+
+        <div class="calc-container">
+            <!-- STEP 1: Gas Bill -->
+            <div class="calc-step active" id="step1">
+                <div class="step-header">
+                    <span class="step-number">01</span>
+                    <h2>¿Cuánto pagas de gas al mes?</h2>
+                    <p>Incluye el total de tu recibo mensual de gas</p>
+                </div>
+                <div class="step-body">
+                    <div class="slider-display">
+                        <span class="slider-currency">$</span>
+                        <span class="slider-value" id="gasDisplay">800</span>
+                        <span class="slider-unit">MXN/mes</span>
+                    </div>
+                    <input type="range" class="calc-slider" id="gasSlider" min="200" max="3000" value="800" step="50"
+                        oninput="updateGasDisplay(this.value)">
+                    <div class="slider-labels">
+                        <span>$200</span>
+                        <span>$3,000</span>
+                    </div>
+                    <div class="manual-input">
+                        <label>O ingresa el monto exacto:</label>
+                        <input type="number" id="gasInput" value="800" min="100" max="10000" placeholder="$800"
+                            oninput="updateGasSlider(this.value)">
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="btn-next" onclick="nextStep(2)">Siguiente →</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Water heating percentage -->
+            <div class="calc-step" id="step2">
+                <div class="step-header">
+                    <span class="step-number">02</span>
+                    <h2>¿Qué porcentaje de tu gas es para calentar agua?</h2>
+                    <p>Estima cuánto de tu consumo de gas se va en agua caliente</p>
+                </div>
+                <div class="step-body">
+                    <div class="option-cards">
+                        <div class="option-card" data-value="0.30" onclick="selectOption(this, 'waterPercent')">
+                            <div class="option-icon">🚿</div>
+                            <div class="option-title">30%</div>
+                            <div class="option-desc">Uso básico: 1-2 regaderas, sin lavadora con agua caliente</div>
+                        </div>
+                        <div class="option-card selected" data-value="0.50"
+                            onclick="selectOption(this, 'waterPercent')">
+                            <div class="option-icon">🛁</div>
+                            <div class="option-title">50%</div>
+                            <div class="option-desc">Uso moderado: regaderas diarias + lavado ocasional</div>
+                            <span class="option-badge">Más común</span>
+                        </div>
+                        <div class="option-card" data-value="0.70" onclick="selectOption(this, 'waterPercent')">
+                            <div class="option-icon">🏠</div>
+                            <div class="option-title">70%</div>
+                            <div class="option-desc">Uso alto: regaderas largas, lavadora, lavaplatos</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="btn-back" onclick="prevStep(1)">← Anterior</button>
+                    <button class="btn-next" onclick="nextStep(3)">Siguiente →</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Household size -->
+            <div class="calc-step" id="step3">
+                <div class="step-header">
+                    <span class="step-number">03</span>
+                    <h2>¿Cuántas personas viven en tu hogar?</h2>
+                    <p>Esto determina el tamaño de sistema que necesitas</p>
+                </div>
+                <div class="step-body">
+                    <div class="option-cards">
+                        <div class="option-card" data-value="1" onclick="selectOption(this, 'householdSize')">
+                            <div class="option-icon">👤</div>
+                            <div class="option-title">1-2 personas</div>
+                            <div class="option-desc">Pareja o persona sola</div>
+                        </div>
+                        <div class="option-card selected" data-value="2" onclick="selectOption(this, 'householdSize')">
+                            <div class="option-icon">👨‍👩‍👧</div>
+                            <div class="option-title">3-4 personas</div>
+                            <div class="option-desc">Familia típica</div>
+                            <span class="option-badge">Más común</span>
+                        </div>
+                        <div class="option-card" data-value="3" onclick="selectOption(this, 'householdSize')">
+                            <div class="option-icon">👨‍👩‍👧‍👦</div>
+                            <div class="option-title">5+ personas</div>
+                            <div class="option-desc">Familia grande</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="btn-back" onclick="prevStep(2)">← Anterior</button>
+                    <button class="btn-next" onclick="nextStep(4)">Siguiente →</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: State -->
+            <div class="calc-step" id="step4">
+                <div class="step-header">
+                    <span class="step-number">04</span>
+                    <h2>¿En qué estado de la República vives?</h2>
+                    <p>La radiación solar varía por región y afecta tu ahorro</p>
+                </div>
+                <div class="step-body">
+                    <div class="state-select-wrapper">
+                        <select id="stateSelect" class="state-select">
+                            <option value="">Selecciona tu estado...</option>
+                            <option value="Aguascalientes">Aguascalientes</option>
+                            <option value="Baja California">Baja California</option>
+                            <option value="Baja California Sur">Baja California Sur</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Ciudad de México">Ciudad de México</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Estado de México">Estado de México</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">San Luis Potosí</option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                    </div>
+                    <div class="state-info" id="stateInfo">
+                        <div class="state-radiation">
+                            <span class="radiation-icon">☀️</span>
+                            <span>Selecciona tu estado para ver su índice solar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="btn-back" onclick="prevStep(3)">← Anterior</button>
+                    <button class="btn-next" onclick="goToStep5()">Siguiente →</button>
+                </div>
+            </div>
+
+            <!-- STEP 5: Email -->
+            <div class="calc-step" id="step5">
+                <div class="step-header">
+                    <span class="step-number">05</span>
+                    <h2>¿A dónde enviamos tu análisis completo?</h2>
+                    <p>Recibirás un PDF personalizado con tu análisis de ahorro detallado</p>
+                </div>
+                <div class="step-body">
+                    <div class="email-form">
+                        <div class="input-group">
+                            <label for="userName">Tu nombre</label>
+                            <input type="text" id="userName" placeholder="Ej. María López" class="form-input" />
+                        </div>
+                        <div class="input-group">
+                            <label for="userEmail">Tu email</label>
+                            <input type="email" id="userEmail" placeholder="tu@email.com" class="form-input" />
+                        </div>
+                        <div class="privacy-note">
+                            🔒 Tu información es confidencial. No spam, lo prometemos.
+                        </div>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="btn-back" onclick="prevStep(4)">← Anterior</button>
+                    <button class="btn-next btn-calculate" onclick="showResults()">Ver Mi Ahorro ☀️</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-section" id="results">
+        <div class="results-container">
+            <div class="results-header">
+                <span class="badge badge-green">✅ ¡Listo!</span>
+                <h2>Tu Análisis de Ahorro Solar</h2>
+                <p class="results-name" id="resultsName"></p>
+            </div>
+
+            <!-- Main savings card -->
+            <div class="savings-hero">
+                <div class="savings-main">
+                    <span class="savings-label">Tu ahorro anual estimado</span>
+                    <span class="savings-amount" id="annualSavings">$0</span>
+                    <span class="savings-monthly">(<span id="monthlySavings">$0</span>/mes que te ahorras)</span>
+                </div>
+                <div class="savings-visual">
+                    <div class="savings-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.1)"
+                                stroke-width="8" />
+                            <circle cx="60" cy="60" r="52" fill="none" stroke="url(#grad)" stroke-width="8"
+                                stroke-dasharray="327" stroke-dashoffset="100" stroke-linecap="round"
+                                id="coverageRing" />
+                            <defs>
+                                <linearGradient id="grad">
+                                    <stop offset="0%" stop-color="#f59e0b" />
+                                    <stop offset="100%" stop-color="#ef4444" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="ring-text">
+                            <span id="coveragePercent">0%</span>
+                            <small>Cobertura solar</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">💰</div>
+                    <div class="result-value" id="savings5y">$0</div>
+                    <div class="result-label">Ahorro a 5 años</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">📈</div>
+                    <div class="result-value" id="savings10y">$0</div>
+                    <div class="result-label">Ahorro a 10 años</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">⏱️</div>
+                    <div class="result-value" id="roiYears">0</div>
+                    <div class="result-label">Años para recuperar inversión</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">🌱</div>
+                    <div class="result-value" id="co2Avoided">0 kg</div>
+                    <div class="result-label">CO₂ evitado al año</div>
+                </div>
+            </div>
+
+            <!-- Comparison bar chart -->
+            <div class="comparison-section">
+                <h3>Comparación: Con Gas vs Con Solar</h3>
+                <div class="comparison-chart">
+                    <div class="chart-row">
+                        <span class="chart-label">Gasto actual en agua caliente</span>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar bar-red" id="barGas"><span id="barGasVal">$0/año</span></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <span class="chart-label">Con calentador solar</span>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar bar-green" id="barSolar"><span id="barSolarVal">$0/año</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment recommendation -->
+            <div class="equipment-section">
+                <h3>💡 Equipo Recomendado</h3>
+                <div class="equipment-card">
+                    <div class="equip-info">
+                        <span class="equip-size" id="equipSize">Sistema mediano</span>
+                        <span class="equip-desc" id="equipDesc">Ideal para 3-4 personas</span>
+                    </div>
+                    <div class="equip-cost">
+                        <span class="equip-label">Inversión estimada</span>
+                        <span class="equip-price" id="equipPrice">$18,000 MXN</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="results-cta">
+                <h3>¿Listo para empezar a ahorrar?</h3>
+                <p>Agenda una consulta gratuita con un especialista en calentadores solares</p>
+                <div class="cta-buttons">
+                    <button class="cta-main"
+                        onclick="window.open('https://wa.me/5215512345678?text=Hola%2C%20me%20interesa%20un%20calentador%20solar','_blank')">
+                        💬 Contactar por WhatsApp
+                    </button>
+                    <button class="cta-secondary" onclick="resetCalculator()">
+                        🔄 Calcular de nuevo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Back to guide -->
+            <div class="back-guide">
+                <a href="index.html">📖 Ver Guía de Mantenimiento de Calentadores Solares</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="calculadora.js"></script>
+</body>
+
+</html>
